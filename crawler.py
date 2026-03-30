@@ -1,6 +1,6 @@
 # ===================================================
 # crawler.py - Webクローラーモジュール（Level 2）
-# Week 3 / 指令
+# Webサイトから情報を抽出し、構造化データとして返却する
 # ===================================================
 import requests
 from bs4 import BeautifulSoup
@@ -11,6 +11,7 @@ import re
 def fetch_page(url: str, timeout: int = 10) -> Optional[str]:
     """
     指定URLのHTMLを取得する。
+    webサイトへのリクエストを担当する関数
 
     Args:
         url:     取得対象URL
@@ -118,12 +119,12 @@ def crawl_url(url: str) -> dict:
         }
 
 
-# ─── テスト ───
+# ─── 動作確認用テスト ───
 if __name__ == "__main__":
     result = crawl_url("https://example.com")  #任意のリンクを記入してください
 
     if result.get("crawl_status") == "success":
-        print("✅ クロール成功!")
+        print("✅ クロール大成功!")
         print(f"📄 タイトル: {result['title']}")
         print(f"📝 説明: {result['description'][:100]}...")
         print(f"📊 文字数: {result['word_count']}語")
