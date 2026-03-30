@@ -119,7 +119,7 @@ def crawl_url(url: str) -> dict:
         }
 
 
-# ─── 動作確認用テスト ───
+# ─── テスト ───
 if __name__ == "__main__":
     result = crawl_url("https://example.com")  #任意のリンクを記入してください
 
